@@ -124,10 +124,6 @@ const createUser = () => {
 const renderUserList = (userList = JSON.parse(localStorage.getItem('userList'))) => {
     const tbody = document.querySelector("#tbl-userList tbody");
 
-    // optional chaining ?. 앞의 변수가 undefined/null일때도 오류를 유발하지 않음
-    // userList?.reverse(); // 역순정렬
-
-
     if (userList) {
         userList.forEach(({userId, password, userName, email, datetime}, index) => {
             tbody.innerHTML += `

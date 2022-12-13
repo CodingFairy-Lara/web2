@@ -183,10 +183,10 @@ button {
     display: inline-block;
     padding: 12px 23px;
     border-radius: 15px;
-    font-family: 'Dosis', sans-serif;
+    font-family: 'Open Sans', sans-serif;
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
     text-decoration: none;
-    font-weight: 600;
+    font-weight: 500;
     transition: 0.25s;
     margin: 20px;
     background-color: #a3a1a1;
@@ -271,5 +271,3 @@ button#btn_userList {
          url('https://cdn.jsdelivr.net/gh/webfontworld/gangwon/GangwonEduAllLight.ttf') format("truetype");
     font-display: swap;
 } 
-
-@import url('https://fonts.googleapis.com/css2?family=Dosis:wght@300;400;500&family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&family=Nanum+Pen+Script&family=Sunflower:wght@300;500;700&display=swap'); 

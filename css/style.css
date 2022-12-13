@@ -46,6 +46,19 @@ a {
 #main_imgs {
     display: flex;
 }
+.mainImgs {
+    width: 336px;
+    margin: 2px auto;
+}
+.mainImgs:hover img{
+    filter: brightness(1.08)
+}
+
+/* .hover13 figure:hover img {
+    opacity: 1;
+    -webkit-animation: flash 1.5s;
+    animation: flash 1.5s;
+  } */
 
 .column_left {
     float: left;
@@ -269,6 +282,7 @@ button#btn_userList {
 }
 .favorite_inner {
     width: 280px;
+    height: 393px;
     margin: 0px 2px auto;
     padding: 1.5%;
     border: 1px dotted #ddd;;
@@ -282,7 +296,39 @@ button#btn_userList {
 }
 #slide_controller {
     position: absolute;
-    transform: translate(405px);
+    transform: translate(410px);
+}
+#btn_prev, #btn_next {
+    background-color: #b19595d2;
+    font-weight: 1000;
+}
+#roadmap_box {
+    display: inline-block;
+    width: 850px;
+}
+
+#roadmap_box iframe {
+    width: 850px;
+    height: 2300px;
+    border-radius: 15px;
+}
+.icons {
+    width: 80px;
+}
+#contact_info_box {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.contact_info img{
+    float: left;
+}
+.contact_info p{
+    margin-top: 25%;
+    float: left;
+}
+#contact_info_tbl table {
+    table-layout: fixed;
 }
 
 

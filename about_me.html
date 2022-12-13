@@ -7,7 +7,7 @@
     <title>About Hera</title>
     <link rel="stylesheet" href="./css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin><link href="https://fonts.googleapis.com/css2?family=Gowun+Batang:wght@400;700&family=Nanum+Myeongjo:wght@400;700;800&family=Nanum+Pen+Script&family=Open+Sans:wght@300;400;600&family=Sunflower:wght@300;500;700&display=swap" rel="stylesheet">
-    <!-- <script src="./js/index.js"></script> -->
+    <script src="./js/index.js"></script>
 
 </head>
 <body class="body-shadow">
@@ -22,35 +22,52 @@
     </div>
     <div id="container" role="main">
         <div id="img_tap" style="width: 1024px; margin: 0px auto; position: relative;">
-        <div id="imgs" style="display: flex;">
-            <div id="main img1"">
-                <img src="./images/bunny.jpeg" alt=""  style="width: 336px;  height: 336px;">
+        <div id="main_imgs" style="display: flex;">
+            <div id="main_img2" style="width: 336px; margin: 2px auto;">
+                <img src="./images/selfie2.JPG" alt=""  style="width: 336px; height: 336px;">
             </div>
-            <div id="main img2" style="width: 336px; margin: 2px auto;">
+            <div id="main_img1" class="" style="width: 336px; margin: 2px auto;">
+                <img src="./images/newyork.jpeg" alt=""  style="width: 336px;  height: 336px;">
+            </div>
+            <div id="main_img3" style="width: 336px; margin: 2px auto;">
                 <img src="./images/selfie.jpeg" alt="" style="width: 336px; height: 336px;">
-            </div>
-            <div id="main img3" style="width: 336px; margin: 2px auto;">
-                <img src="./images/newyork.jpeg" alt=""  style="width: 336px; height: 336px;">
             </div>
         </div>
         <div id="introduction">
             <h1>What Hera Loves</h1>
             <img src="./images/favorite.jpeg" alt="" style="width: 200px;"><br><br>
             <div id="favorite_box">
-                <div id="favorite1" class="favorite">
-                    <img src="./images/zeze2.jpeg" alt="" style="width: 240px;">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam libero iusto cum, perspiciatis temporibus corporis aliquid nemo quia optio reprehenderit excepturi exercitationem rem ex iste labore vitae iure. Beatae, reiciendis.</p>
-                </div>
-                <div id="favorite2" class="favorite">
-                    <img src="./images/zeze2.jpeg" alt="" style="width: 240px;">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam libero iusto cum, perspiciatis temporibus corporis aliquid nemo quia optio reprehenderit excepturi exercitationem rem ex iste labore vitae iure. Beatae, reiciendis.</p>
-                </div>
-                <div id="favorite3" class="favorite">
-                    <img src="./images/zeze2.jpeg" alt="" style="width: 240px;">
-                    <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam libero iusto cum, perspiciatis temporibus corporis aliquid nemo quia optio reprehenderit excepturi exercitationem rem ex iste labore vitae iure. Beatae, reiciendis.</p>
+                <div class="favorite_container">
+                    <div id="favorite1" class="favorite_inner">
+                        <img src="./images/bear.jpeg" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam libero iusto cum, perspiciatis temporibus corporis aliquid nemo quia optio reprehenderit excepturi exercitationem rem ex iste labore vitae iure. Beatae, reiciendis.</p>
+                    </div>
+                    <div id="favorite2" class="favorite_inner">
+                        <img src="./images/warmbeige.JPG" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam libero iusto cum, perspiciatis temporibus corporis aliquid nemo quia optio reprehenderit excepturi exercitationem rem ex iste labore vitae iure. Beatae, reiciendis.</p>
+                    </div>
+                    <div id="favorite3" class="favorite_inner">
+                        <img src="./images/kazuha.JPG" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam libero iusto cum, perspiciatis temporibus corporis aliquid nemo quia optio reprehenderit excepturi exercitationem rem ex iste labore vitae iure. Beatae, reiciendis.</p>
+                    </div>
+                    <div id="favorite4" class="favorite_inner">
+                        <img src="./images/bear.jpeg" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam libero iusto cum, perspiciatis temporibus corporis aliquid nemo quia optio reprehenderit excepturi exercitationem rem ex iste labore vitae iure. Beatae, reiciendis.</p>
+                    </div>
+                    <div id="favorite5" class="favorite_inner">
+                        <img src="./images/warmbeige.JPG" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam libero iusto cum, perspiciatis temporibus corporis aliquid nemo quia optio reprehenderit excepturi exercitationem rem ex iste labore vitae iure. Beatae, reiciendis.</p>
+                    </div>
+                    <div id="favorite6" class="favorite_inner">
+                        <img src="./images/kazuha.JPG" alt="">
+                        <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Laboriosam libero iusto cum, perspiciatis temporibus corporis aliquid nemo quia optio reprehenderit excepturi exercitationem rem ex iste labore vitae iure. Beatae, reiciendis.</p>
+                    </div>
                 </div>
             </div>
-
+            <div id="slide_controller">
+                <button id="btn_prev" onclick="prevImg()"> < </button>
+                <button id="btn_next" onclick="nextImg()"> > </button>
+            </div>
 
         </div>
         

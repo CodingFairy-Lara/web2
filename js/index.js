@@ -153,10 +153,29 @@ const datetimeFormatter = (date) => {
 
 };
 
-const test1 = () => {
+const popupList = () => {
     const w = 700, h = 550;
     const {width, height, availWidth, availHeight, availTop} = screen;
     const left = (width-w)/2;
     const top = (height-h)/2;
     const popup = open('userList.html', 'User List', `width=${w}px, height=${h}px, left=${left}px, top=${top}px`);
+};
+
+// ** favorite box slide **
+let currentIdx = 1;
+
+prevImg = () => {
+    let slides = document.querySelector('.favorite_container');
+    if (currentIdx !== 0) {
+        slides.style.transform += 'translate(+354px)';
+        currentIdx -= 1;
+    } else return false;
+};
+
+nextImg = () => {
+    let slides = document.querySelector('.favorite_container');
+    if (currentIdx !== 5) {
+        slides.style.transform += 'translate(-354px)';
+        currentIdx += 1;
+    } else return false;
 };

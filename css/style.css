@@ -42,6 +42,11 @@ a {
     font-weight: bold;
     text-align: center;
 }
+/* Flashing */
+#main_imgs {
+    display: flex;
+}
+
 .column_left {
     float: left;
     width: 590px;
@@ -244,19 +249,40 @@ button#btn_userList {
 
 /* about Lara */
 #introduction {
+    width: 1024px;
     background-color: rgba(255, 255, 255, 0.735);
+    overflow: hidden;
 }
 #favorite_box {
-    display: flex;
+    /* display: flex; */
+    width: 900px;
     height: 460px;
-    justify-content: center;
-    flex-direction: row;
+    /* float: left; */
+    /* justify-content: center; */
+    /* flex-direction: row; */
 }
-.favorite {
+.favorite_container {
+    width: 2160px;
+    /* transform: translate(-30px); */
+    transition: transform 0.25s;
+    /* position: absolute; */
+}
+.favorite_inner {
     width: 280px;
-    margin: 5px auto;
-    padding: 2%;
+    margin: 0px 2px auto;
+    padding: 1.5%;
     border: 1px dotted #ddd;;
+    float: left;
+}
+.favorite_inner img {
+    width: 240px;
+}
+.favorite_container div:first-child {
+    margin-left: -10px;
+}
+#slide_controller {
+    position: absolute;
+    transform: translate(405px);
 }
 
 

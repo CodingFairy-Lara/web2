@@ -99,25 +99,21 @@ function regExpTest(regExp, el, msg) {
   }
 
 /**
- * 폼제출 - localStorage에 저장
+ * ! 폼제출 - localStorage에 저장
  */
 const createUser = () => {
     // 1. 객체 생성
     const user = new User(userId.value, password.value, userName.value, email.value);
     console.log(user);
-
     // 2. 배열에 추가
     const userList = JSON.parse(localStorage.getItem('userList')) || [];
     userList.push(user);
     console.log(userList);
-
     // 3. localStorage에 저장
     localStorage.setItem('userList', JSON.stringify(userList));
-
     // 4. 초기화
     document.createAccountFrm.reset();
-
-    // 5. 방명록 렌더링
+    // 5. 렌더링
     renderUserList(userList);
 };
 
@@ -153,6 +149,9 @@ const datetimeFormatter = (date) => {
 
 };
 
+/**
+ * ! ** userList popup **
+ */
 const popupList = () => {
     const w = 700, h = 550;
     const {width, height, availWidth, availHeight, availTop} = screen;
@@ -161,9 +160,10 @@ const popupList = () => {
     const popup = open('userList.html', 'User List', `width=${w}px, height=${h}px, left=${left}px, top=${top}px`);
 };
 
-// ** favorite box slide **
+/**
+ * ! ** favorite box slide **
+ */
 let currentIdx = 1;
-
 prevImg = () => {
     let slides = document.querySelector('.favorite_container');
     if (currentIdx !== 0) {
@@ -180,8 +180,16 @@ nextImg = () => {
     } else return false;
 };
 
-// for music(Youtube) player
+/**
+ * ! ** Youtube(music) player **
+ */ 
 let player;
+
+// Youtube API
+const tag = document.createElement('script');
+tag.src = "https://www.youtube.com/player_api";
+const firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 
 function onYouTubePlayerAPIReady() {
     player = new YT.Player('iframe_music_player', {
@@ -191,29 +199,65 @@ function onYouTubePlayerAPIReady() {
     });
 }
 
+let isPlaying = true;
+let isShuffled = false;
+let isLooped = false;
 function onPlayerReady(event) {
-
-    // bind events
-    // if (player.)
-    // let playButton = document.getElementById("btn_pause");
-    // playButton.addEventListener("click", function() {
-    //     player.playVideo();
-    // });
-
     let pauseButton = document.getElementById("btn_pause");
+    let nextButton = document.getElementById("btn_nextMusic");
+    let prevButton = document.getElementById("btn_prevMusic");
+    let shuffleButton = document.getElementById("btn_shuffle");
+    let loopButton = document.getElementById("btn_loop");
+    let muteButton = document.getElementById("btn_mute");
+
+    //bind events
     pauseButton.addEventListener("click", function() {
-        player.pauseVideo();
+        if (isPlaying == true) {
+            player.pauseVideo();
+            isPlaying = false;
+        } else {
+            player.playVideo();
+            isPlaying = true;
+        }
     });
 
-    // let stopButton = document.getElementById("stop-button");
-    // stopButton.addEventListener("click", function() {
-    //     player.stopVideo();
-    // });
+    prevButton.addEventListener("click", function() {
+        player.previousVideo();
+    });
 
+    nextButton.addEventListener("click", function() {
+        player.nextVideo();
+    });
+
+    shuffleButton.addEventListener("click", function() {
+        if (isShuffled == true) {
+            player.setShuffle(false);
+            isShuffled = false;
+        } else {
+            player.setShuffle(true);
+            isShuffled = true;
+        }
+    });
+
+    loopButton.addEventListener("click", function() {
+        if (isLooped == true) {
+            player.setLoop(false);
+            isLooped = false;
+        } else {
+            player.setLoop(true);
+            isLooped = true;
+        }
+    });
+
+    muteButton.addEventListener("click", function() {
+        if (player.isLooped == true) {
+            player.unMute();
+            player.isLooped = false;
+        } else {
+            player.mute();
+            player.isLooped = true;
+        }
+    });
+    
 }
-// Youtube API
-const tag = document.createElement('script');
-tag.src = "https://www.youtube.com/player_api";
-const firstScriptTag = document.getElementsByTagName('script')[0];
-firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
 

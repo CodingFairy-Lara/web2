@@ -179,3 +179,41 @@ nextImg = () => {
         currentIdx += 1;
     } else return false;
 };
+
+// for music(Youtube) player
+let player;
+
+function onYouTubePlayerAPIReady() {
+    player = new YT.Player('iframe_music_player', {
+        events: {
+            'onReady': onPlayerReady
+        }
+    });
+}
+
+function onPlayerReady(event) {
+
+    // bind events
+    // if (player.)
+    // let playButton = document.getElementById("btn_pause");
+    // playButton.addEventListener("click", function() {
+    //     player.playVideo();
+    // });
+
+    let pauseButton = document.getElementById("btn_pause");
+    pauseButton.addEventListener("click", function() {
+        player.pauseVideo();
+    });
+
+    // let stopButton = document.getElementById("stop-button");
+    // stopButton.addEventListener("click", function() {
+    //     player.stopVideo();
+    // });
+
+}
+// Youtube API
+const tag = document.createElement('script');
+tag.src = "https://www.youtube.com/player_api";
+const firstScriptTag = document.getElementsByTagName('script')[0];
+firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);
+

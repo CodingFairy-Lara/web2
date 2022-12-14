@@ -330,7 +330,45 @@ button#btn_userList {
 #contact_info_tbl table {
     table-layout: fixed;
 }
+#music_player {
 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+#iPod {
+    background-color: #ffffff;
+    border-radius: 15px;
+    padding: 10px;
+    width: 450px;
+    height: 550px;
+    box-shadow: 2px 3px 35px 5px rgba(129, 129, 129, 0.733) inset;
+}
+#iPod_display {
+    border: 5px solid rgb(107, 107, 107);
+    border-radius: 8px;
+    width: 380px;
+    height: 220px;
+    margin-top: 7.9%;
+    margin-left: 7%;
+}
+#iPod_display iframe {
+    width: 380px;
+    height: 220px;
+    border-radius: 3px;
+}
+#iPod_console img{
+    width: 230px;
+    margin-top: 4.9%;
+}
+#btn_pause {
+    position:absolute;
+    transform: translate(-160px, 198px);
+    background-color: #ffffff00;
+    box-shadow: 0px 0px 0px 0px;
+    width: 50px;
+    height: 30px;
+}
 
 @font-face {
     font-family: 'GangwonEduAll';
